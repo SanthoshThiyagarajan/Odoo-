@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Action to open Product Complain (form view) -->
+    <record id="action_product_complain_wizard" model="ir.actions.act_window">
+        <field name="name">Product Complain</field>
+        <field name="res_model">sales.return</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Form View -->
+    <record id="product_return_from" model="ir.ui.view">
+        <field name="name">Product return from view</field> 
+        <field name="model">sales.return</field>
+        <field name="arch" type="xml">
+            <form string="Generate Excel Report">
+                <group>
+                    <field name="month"/>
+                    <field name="year"/>
+                    <field name="previous_month_count"/>
+                </group>
+
+                <!-- ✅ Add download field above footer -->
+                <group>
+                    <field name="file_name" readonly="1"/>
+                </group>
+
+                <footer>
+                    <button string="Generate" type="object" name="generate_excel" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

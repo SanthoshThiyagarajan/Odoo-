@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Root Menu-->
+    <menuitem id="sales_return_parent" 
+        name="Sales Return"
+        parent="sale.sale_order_menu"
+        sequence="60" />
+    <!-- Sub Menu-->
+    <menuitem id="Sales_sales_return_child" 
+        name="Product Return"
+        sequence="10" 
+        parent="sales_return_parent" 
+        action="action_product_complain_wizard"/>
+</odoo>
